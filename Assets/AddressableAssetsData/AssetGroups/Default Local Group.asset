@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 22ff97ee13d8f374f8adbffd8876676b
+  m_SerializeEntries:
+  - m_GUID: f741df9da0d448a46a041a391730877a
+    m_Address: Ground
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e740084a60f9134aaa1a37394461314
+    m_Address: Obstacle1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a96bdf6ce38c1a48be0a0404bf50449
+    m_Address: Obstacle2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4da7e71756e9a254db7aca213ad4f20e
+    m_Address: Player
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6e5a23546be40e1499344ed9e876939d
+    m_Address: Cube
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 19ef19ec3fde67b449a5a41dc879af05
+    m_Address: Ground 1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 77b432186703b3d47b8e8059afafb477, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f99cd98e6842a484dbd244e94752b894, type: 2}
+    - {fileID: 11400000, guid: 067ba34470218de40b0a3bfe6482975b, type: 2}
