@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/FlappyBird/Scenes/Game.unity
     guid: 7c77a7819e86a6d46b5a645bb45d0a40
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9a5687a5b4733864f954950381707bb7, type: 2}
