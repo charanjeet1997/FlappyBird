@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 157741035530953618}
   - component: {fileID: 3375749855447930177}
   - component: {fileID: 2100697488755965958}
+  - component: {fileID: 4460566171909357835}
   m_Layer: 0
   m_Name: EmptyGround
   m_TagString: Untagged
@@ -75,9 +76,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb36f219b287a364ab4c805581a5f4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiatePoolObjects: {fileID: 11400000, guid: 6c82556f80ed13a49a3602e5284b1bae, type: 2}
   sendObstacleOffsetPosition: {fileID: 11400000, guid: 63211a4840ee3fc46bd515ff91ede8a0, type: 2}
   offsetTransform: {fileID: 1995102240468096288}
+--- !u!114 &4460566171909357835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157741035530953623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb344631d70ac44d9cb4bf1ddaeaef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4676244329660043719
 GameObject:
   m_ObjectHideFlags: 0

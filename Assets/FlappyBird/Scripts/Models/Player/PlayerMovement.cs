@@ -11,5 +11,6 @@ namespace Games.FlappyBird
         {
             transform.Translate(Vector2.right * movementSpeed * Time.deltaTime); 
         }
+        
     }
 }

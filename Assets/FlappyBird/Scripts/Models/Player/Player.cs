@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Games.FlappyBird
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public class Player : MonoBehaviour
+	{
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+		#region PUBLIC_VARS
+
+		#endregion
+
+		#region PRIVATE_VARS
+
+		#endregion
+
+		#region UNITY_CALLBACKS
+
+		#endregion
+
+		#region PUBLIC_METHODS
+
+		#endregion
+
+		#region PRIVATE_METHODS
+
+		#endregion
+
+	}
 }

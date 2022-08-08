@@ -20,6 +20,16 @@ namespace Games.FlappyBird.CollisionSelectable
 
         public Collider2D Collider => collider;
 
+        private void OnEnable()
+        {
+            CollisionSelectionManager2D.Instance.Add(this);
+        }
+
+        private void OnDisable()
+        {
+            CollisionSelectionManager2D.Instance.Remove(this);
+        }
+
         public void OnObjectTriggered(Transform collidedObject)
         {
             updateScore.Invoke(new GameEventData<int>(1));

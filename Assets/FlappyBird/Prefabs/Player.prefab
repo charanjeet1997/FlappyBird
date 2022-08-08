@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5635218082248841887}
   - component: {fileID: 5635218082248841881}
   - component: {fileID: 5635218082248841882}
+  - component: {fileID: 5387010256057038913}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -175,6 +176,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ba7f592effd7440b6149dcc1c52c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5387010256057038913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635218082248841859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13f9c563bd90f344a208ca7906daacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateScoreOnCollide: {fileID: 11400000, guid: 3c16e3526feaca841b5d690f1a2a294d, type: 2}
 --- !u!1 &5635218082534905728
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +200,7 @@ GameObject:
   - component: {fileID: 5635218082534905729}
   - component: {fileID: 5635218082534905730}
   - component: {fileID: 5590277822341791051}
+  - component: {fileID: 4574048677879380476}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -235,3 +250,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5635218082248841880}
+--- !u!114 &4574048677879380476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635218082534905728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90f6146076529d547a4a438c61aa05ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
