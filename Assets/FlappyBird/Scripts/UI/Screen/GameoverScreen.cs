@@ -20,6 +20,10 @@ namespace Games.FlappyBird.UI
 
 		#region PUBLIC_METHODS
 
+		public void RestartButtonClick()
+		{
+			ViewController.Instance.ChangeScreen(ScreenName.StartScreen);
+		}
 		#endregion
 
 		#region PRIVATE_METHODS
@@ -30,21 +34,21 @@ namespace Games.FlappyBird.UI
 
 		public override void Enable()
 		{
-
+			base.Enable();
 		}
 		public override void Disable()
 		{
-
+			base.Disable();
 		}
 		
 		public override void Show()
 		{
-
+			base.Show();
 		}
 		
 		public override void Hide()
 		{
-
+			base.Hide();
 		}
 
 		#endregion

@@ -39,7 +39,7 @@ namespace UISystem
         } 
         public virtual void Show()
         {
-         
+            Debug.Log("Show");
             if (isActive)
                 return;
             
@@ -59,6 +59,7 @@ namespace UISystem
         }
         public virtual void Hide()
         {
+            Debug.Log("Hide");
             canvasGroup.interactable = false;
             if (uiAnimator)
             {

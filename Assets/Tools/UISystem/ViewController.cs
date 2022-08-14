@@ -37,7 +37,12 @@ namespace UISystem
         {
             Instance = this;
         }
-        void Start() => Init();
+
+        void Start()
+        {
+            Debug.Log("Init UI system");
+            Init();
+        }
 
         public void ShowPopup(PopupName popupName)
         {
@@ -65,10 +70,13 @@ namespace UISystem
             }
             else
             {
+                Debug.Log("Change screen 1");
                 currentView = screens[GetScreenIndex(screen)].screen;
+                Debug.Log("Change screen "+ currentView.name);
                 currentView.Show();
             }
         }
+        
 
         public void HideScreen(ScreenName screen)
         {
@@ -96,7 +104,13 @@ namespace UISystem
 
             }
         }
-
+        [ContextMenu("Show Init Screen")]
+        public void ShowInitScreen()
+        {
+            currentView = screens[GetScreenIndex(initScreen)].screen;
+            Debug.Log("Change screen "+ currentView.name);
+            currentView.Show();
+        }
         int GetScreenIndex(ScreenName screen)
         {
             return screens.FindIndex(
@@ -116,7 +130,7 @@ namespace UISystem
         }
 
         public void RedrawView() => currentView.Redraw();
-
+        
         private void Init()
         {
             for (int indexOfScreen = 0; indexOfScreen < screens.Count; indexOfScreen++)
@@ -127,7 +141,7 @@ namespace UISystem
             {
                 popups[indexOfpopup].popup.Disable();
             }
-
+            Debug.Log("Init");
             if (initScreen != ScreenName.None)
             {
                 ChangeScreen(initScreen);

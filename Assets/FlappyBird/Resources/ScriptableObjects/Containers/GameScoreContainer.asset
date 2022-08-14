@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d65f5675a6c7645a2f2a00d24a5079, type: 3}
   m_Name: GameScoreContainer
   m_EditorClassIdentifier: 
-  score: 0
-  highScore: 0
+  score: 1
+  highScore: 1

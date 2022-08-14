@@ -21,5 +21,10 @@ namespace Games.FlappyBird
                 highScore = score;
             }
         }
+
+        public void Reset()
+        {
+            score = 0;
+        }
     }
 }

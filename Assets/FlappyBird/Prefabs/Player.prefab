@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+  playerBody2D: {fileID: 5635218082248841887}
 --- !u!114 &5590277822341791051
 MonoBehaviour:
   m_ObjectHideFlags: 0

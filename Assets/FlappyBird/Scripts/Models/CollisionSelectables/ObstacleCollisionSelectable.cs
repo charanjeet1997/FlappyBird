@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CollsionSelectionManager;
+using CommonGameStateManager;
 using UnityEngine;
 
 namespace Games.FlappyBird.CollisionSelectable
@@ -31,6 +32,7 @@ namespace Games.FlappyBird.CollisionSelectable
         public void OnObjectTriggered(Transform collidedObject)
         {
             Debug.Log("Game Over");
+            GameStateManager.Instance.EndGame();
         }
     }
 }

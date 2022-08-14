@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using CommonGameStateManager;
 using EventManagement;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,7 +11,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace Games.FlappyBird
 {
-    public class PoolObjectManager : MonoBehaviour
+    public class PoolObjectManager : MonoBehaviour,IGameOver
     {
         public static PoolObjectManager Instance { get; private set; }
         public List<PoolObject> PoolObjects => poolObjects;
@@ -18,8 +20,9 @@ namespace Games.FlappyBird
         [SerializeField]private AssetReference objectToLoad;
         [SerializeField] private Transform poolObjectParent;
         [SerializeField] private GameEvent onPoolInitiated,getOffsetTransformPosition;
-        private List<PoolObject> poolObjects;
+        [SerializeField]private List<PoolObject> poolObjects;
         private Vector3 poolObjectOffsetPosition;
+        private List<AsyncOperationHandle<GameObject>> poolObjectOperationHandels;
         private void Awake() {
             if(PoolObjectManager.Instance != null)
                 Destroy(PoolObjectManager.Instance.gameObject);
@@ -28,10 +31,12 @@ namespace Games.FlappyBird
         private void OnEnable() {
             onPoolInitiated.Add<GameData>(InitiatePoolSequence);
             getOffsetTransformPosition.Add<GameEventData<Vector3>>(GetPoolObjectoffsetPosition);
+            GameStateManager.Instance.Add(this);
         }
         private void OnDisable() {
             onPoolInitiated.Remove<GameData>(InitiatePoolSequence);
             getOffsetTransformPosition.Remove<GameEventData<Vector3>>(GetPoolObjectoffsetPosition);
+            GameStateManager.Instance.Remove(this);
         }
         
         public void RegisterPoolobject(PoolObject poolObject)
@@ -44,6 +49,17 @@ namespace Games.FlappyBird
         public void DeRegisterPoolObject(PoolObject poolObject)
         {
             poolObjects.Remove(poolObject);
+        }
+        
+        public async void GameOver()
+        {
+            await Task.Delay(3000);
+            for (int indexOfPoolObjectOperationalHandel = 0; indexOfPoolObjectOperationalHandel < poolObjectOperationHandels.Count; indexOfPoolObjectOperationalHandel++)
+            {
+                AsyncOperationHandle<GameObject> operationHandle = poolObjectOperationHandels[indexOfPoolObjectOperationalHandel];
+                Addressables.ReleaseInstance(operationHandle);
+            }
+            poolObjectOperationHandels.Clear();
         }
         
         [ContextMenu("Set Pool")]
@@ -79,6 +95,8 @@ namespace Games.FlappyBird
 
         private void OnPoolObjectInstantiated(AsyncOperationHandle<GameObject> instantiatedObject)
         {
+            if (poolObjectOperationHandels == null) poolObjectOperationHandels = new List<AsyncOperationHandle<GameObject>>();
+            poolObjectOperationHandels.Add(instantiatedObject);
             if(poolObjects.Count-1 == poolIndex)
             {
                 poolObjects[poolObjects.Count-1].InitiatePool = true;

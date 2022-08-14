@@ -9,6 +9,7 @@ namespace UISystem
         private Module currentModule;
         [HideInInspector]
         public List<BaseUI> visibleBaseUI;
+        public ScreenName previousScreen;
         public override void Awake()
         {
             base.Awake();
@@ -17,6 +18,7 @@ namespace UISystem
         }
         public override void Show()
         {
+            Debug.Log("Show");
             visibleBaseUI.Clear();
             visibleBaseUI.Add(this);
             base.Show();
@@ -88,5 +90,26 @@ namespace UISystem
             }
             return GetSortingOrder();
         }
+
+        public void HidePopups(List<PopupView> popupDatas)
+        {
+            for (int indexOfPopup = 0; indexOfPopup < popupDatas.Count; indexOfPopup++)
+            {
+                popupDatas[indexOfPopup].popup.Hide();
+            }
+        }
+
+        public void HidePopup(PopupName popupName, List<PopupView> popups)
+        {
+            popups.Find(x => x.popupName == popupName).popup.Hide();
+        }
+
+        public void ShowPopup(PopupName popupName,List<PopupView> popupDatas)
+        {
+            popupDatas.Find(x => x.popupName == popupName).popup.Show();
+        }
+        
+        public T GetPopup<T>(PopupName sName,List<PopupView> popups) => (T)popups.Find(x => x.popupName == sName).popup.GetComponent<T>();
     }
+    
 }

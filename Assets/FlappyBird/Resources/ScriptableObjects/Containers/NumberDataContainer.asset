@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559cc2d51f8646e4bb250e02b860b425, type: 3}
+  m_Name: NumberDataContainer
+  m_EditorClassIdentifier: 
+  numberDatas:
+  - numberSprite: {fileID: 21300000, guid: 706295915d21ff740aeb94fbbf6dfd51, type: 3}
+    numberInString: 0
+  - numberSprite: {fileID: 21300000, guid: 1507ecc49ecae4647a348e299be28de0, type: 3}
+    numberInString: 1
+  - numberSprite: {fileID: 21300000, guid: b8b0c324d85e2c747b27144afbdf073d, type: 3}
+    numberInString: 2
+  - numberSprite: {fileID: 21300000, guid: ea36d8f03dd5b1f42b3f35d938bc65a7, type: 3}
+    numberInString: 3
+  - numberSprite: {fileID: 21300000, guid: 00660757f5d162f45b2e853c3c39ec2d, type: 3}
+    numberInString: 4
+  - numberSprite: {fileID: 21300000, guid: 10146ca8164d9a14eba02f641bb8bc46, type: 3}
+    numberInString: 5
+  - numberSprite: {fileID: 21300000, guid: b56bc2f0a5ef8144fbf5ae04430f7816, type: 3}
+    numberInString: 6
+  - numberSprite: {fileID: 21300000, guid: 1b27d6ef6050c994faf5016c41eac090, type: 3}
+    numberInString: 7
+  - numberSprite: {fileID: 21300000, guid: 147cb06d89fca524f9ec0e92d61e4ab5, type: 3}
+    numberInString: 8
+  - numberSprite: {fileID: 21300000, guid: 8c8d535b65e380a4ca2e56d1568cc878, type: 3}
+    numberInString: 9

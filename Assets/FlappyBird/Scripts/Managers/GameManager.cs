@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CommonGameStateManager;
 using EventManagement;
 using Games.FlappyBird;
 using JetBrains.Annotations;
+using UISystem;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using VariableEvents;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour,IGameStart,IGameOver
 {
     public static GameManager Instance;
     public AssetReference objectToLoad;
@@ -30,20 +32,15 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         instantiateEmptyGround.Add<GameData>(InstantiateEmptyGround);
+        GameStateManager.Instance.Add(this);
     }
 
     private void OnDisable()
     {
         instantiateEmptyGround.Remove<GameData>(InstantiateEmptyGround);
+        GameStateManager.Instance.Remove(this);
     }
-
-    private async void Start()
-    {
-        await Task.Delay(3000);
-        InstantiateEmptyGroundAsync();
-    }
-
-
+    
     private void InstantiateEmptyGround(GameData gameData)
     {
         InstantiateEmptyGroundAsync();
@@ -65,12 +62,7 @@ public class GameManager : MonoBehaviour
         InstantiatePlayer();
     }
 
-    [ContextMenu("Instantiate Player")]
-    public void InstantiatePlayer()
-    {
-        InstantiatePlayerAsync(Vector3.zero, quaternion.identity);
-    }
-
+    
     private async void InstantiatePlayerAsync(Vector3 position, Quaternion rotation, Transform parent = null)
     {
         await AddressableAssetInstantiater.InstantiateAddressableAssetAsync(objectToLoad, position, rotation, parent, OnPlayerObjectInstantiated);
@@ -82,9 +74,28 @@ public class GameManager : MonoBehaviour
         player = operationHandle.Result;
         sendPlayerGameObject.Invoke(new GameEventData<GameObject>(player));
     }
-
+    
+    
+    [ContextMenu("Instantiate Player")]
+    public void InstantiatePlayer()
+    {
+        InstantiatePlayerAsync(Vector3.zero, quaternion.identity);
+    }
     public void SetPlayer()
     {
         sendPlayerGameObject.Invoke(new GameEventData<GameObject>(player));
+    }
+
+    public void GameStart()
+    {
+        InstantiateEmptyGroundAsync();
+    }
+
+    public async void GameOver()
+    {
+        await Task.Delay(3000);
+        Addressables.ReleaseInstance(emptyGroundOperationHandel);
+        Addressables.ReleaseInstance(playerOperationHandel);
+        ViewController.Instance.ChangeScreen(ScreenName.GameoverScreen);
     }
 }
