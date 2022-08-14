@@ -8,16 +8,16 @@ namespace Games.FlappyBird.CollisionSelectable
 {
     public class PlayerCollisionSelectable : MonoBehaviour, ITriggerObject2D
     {
-        private CollisionObjectName _collisionObjectName;
-        [SerializeField] private Collider2D _collider;
+        [SerializeField]private CollisionObjectName collisionObjectName;
+        [SerializeField] private Collider2D playerCollider;
 
         public CollisionObjectName CollisionObjectName
         {
-            get => _collisionObjectName;
-            set => _collisionObjectName = value;
+            get => collisionObjectName;
+            set => collisionObjectName = value;
         }
 
-        public Collider2D Collider => _collider;
+        public Collider2D Collider => playerCollider;
 
         private void OnEnable()
         {

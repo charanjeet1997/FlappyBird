@@ -7,8 +7,8 @@ namespace Games.FlappyBird.CollisionSelectable
 {
     public class GroundCollisionSelectable : MonoBehaviour, ITriggerObject2D
     {
-        private CollisionObjectName _collisionObjectName;
-        private Collider2D _collider;
+        [SerializeField] private CollisionObjectName _collisionObjectName;
+        [SerializeField] private Collider2D _collider;
 
         public CollisionObjectName CollisionObjectName
         {
@@ -30,7 +30,7 @@ namespace Games.FlappyBird.CollisionSelectable
 
         public void OnObjectTriggered(Transform collidedObject)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Game Over");
         }
     }
 }

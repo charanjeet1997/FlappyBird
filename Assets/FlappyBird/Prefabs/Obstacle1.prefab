@@ -121,6 +121,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4347732352154709341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6d1cd527f1d1041b9eef9378ccae6e, type: 3}
+  m_Script: {fileID: 11500000, guid: acbc67a5cf4b5cc40b0f5d369d9132ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionObjectName: 1
+  obstacleCollider: {fileID: 5439699}

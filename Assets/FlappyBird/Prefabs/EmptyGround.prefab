@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 157741035530953618}
   - component: {fileID: 3375749855447930177}
   - component: {fileID: 2100697488755965958}
-  - component: {fileID: 4460566171909357835}
   m_Layer: 0
   m_Name: EmptyGround
   m_TagString: Untagged
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sendObstacleOffsetPosition: {fileID: 11400000, guid: 63211a4840ee3fc46bd515ff91ede8a0, type: 2}
   offsetTransform: {fileID: 1995102240468096288}
---- !u!114 &4460566171909357835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157741035530953623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb344631d70ac44d9cb4bf1ddaeaef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4676244329660043719
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +119,7 @@ GameObject:
   - component: {fileID: 4759371172016063034}
   - component: {fileID: 4759371172016063035}
   - component: {fileID: 4759371172016063037}
+  - component: {fileID: 7846971028559265746}
   m_Layer: 0
   m_Name: EmptyGround
   m_TagString: Obstacle
@@ -216,7 +204,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -232,6 +220,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.36, y: 1.12}
   m_EdgeRadius: 0
+--- !u!114 &7846971028559265746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759371172016063039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb344631d70ac44d9cb4bf1ddaeaef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionObjectName: 1
+  _collider: {fileID: 4759371172016063037}
 --- !u!1 &6371876145187331714
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +245,7 @@ GameObject:
   - component: {fileID: 7866514783377810309}
   - component: {fileID: 6941643362618241114}
   - component: {fileID: 1485988654856275987}
+  - component: {fileID: 1442076984451291514}
   m_Layer: 0
   m_Name: EmptyGround (2)
   m_TagString: Obstacle
@@ -327,7 +330,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -343,6 +346,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.36, y: 1.12}
   m_EdgeRadius: 0
+--- !u!114 &1442076984451291514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371876145187331714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb344631d70ac44d9cb4bf1ddaeaef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionObjectName: 1
+  _collider: {fileID: 1485988654856275987}
 --- !u!1 &7835837715627403209
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8012529683281685451}
   - component: {fileID: 7710462510459885643}
+  - component: {fileID: 2347069079640178123}
   - component: {fileID: 6046932270277686297}
   m_Layer: 0
   m_Name: EmptyGround (1)
@@ -428,6 +446,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2347069079640178123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7835837715627403209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb344631d70ac44d9cb4bf1ddaeaef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionObjectName: 1
+  _collider: {fileID: 6046932270277686297}
 --- !u!61 &6046932270277686297
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -438,7 +470,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

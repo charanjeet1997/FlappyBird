@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace Games.FlappyBird.CollisionSelectable
 {
-    public class PillarCollisionSelectable : MonoBehaviour, ITriggerObject2D
+    public class ObstacleCollisionSelectable : MonoBehaviour, ITriggerObject2D
     {
-        private CollisionObjectName _collisionObjectName;
-        private Collider2D _collider;
+        [SerializeField] private CollisionObjectName collisionObjectName;
+        [SerializeField] private Collider2D obstacleCollider;
 
         public CollisionObjectName CollisionObjectName
         {
-            get => _collisionObjectName;
-            set => _collisionObjectName = value;
+            get => collisionObjectName;
+            set => collisionObjectName = value;
         }
 
-        public Collider2D Collider => _collider;
+        public Collider2D Collider => obstacleCollider;
 
         private void OnEnable()
         {
@@ -30,7 +30,7 @@ namespace Games.FlappyBird.CollisionSelectable
 
         public void OnObjectTriggered(Transform collidedObject)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Game Over");
         }
     }
 }
