@@ -29,6 +29,7 @@ namespace Games.FlappyBird
         {
             if(Input.GetMouseButtonDown(0) && !isGameOver)
             {
+                AudioManager.Instance.PlayAudio(AudioFor.Fly,AudioType.GamePlay);
                 rb_player.velocity = Vector3.zero;
                 rb_player.AddForce(new Vector2(0,1) * jumpForce);
                 spriteAnimation.StartAnimate();

@@ -11,6 +11,7 @@ namespace Games.FlappyBird
         public float movementSpeed;
         private bool isGameOver;
         [SerializeField]private Rigidbody2D playerBody2D;
+        [SerializeField] private Collider2D playerCollider;
         private void OnEnable()
         {
             ProcessingUpdate.Instance.Add(this);
@@ -32,8 +33,8 @@ namespace Games.FlappyBird
         public void GameOver()
         {
             isGameOver = true;
-            playerBody2D.gravityScale = 0;
-            playerBody2D.constraints = RigidbodyConstraints2D.FreezePosition;
+            playerBody2D.constraints = RigidbodyConstraints2D.FreezePositionX;
+            playerCollider.enabled = false;
         }
     }
 }

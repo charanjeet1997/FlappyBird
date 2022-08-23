@@ -32,6 +32,7 @@ namespace Games.FlappyBird.CollisionSelectable
 
         public void OnObjectTriggered(Transform collidedObject)
         {
+            AudioManager.Instance.PlayAudio(AudioFor.Point,AudioType.SFX);
             updateScore.Invoke(new GameEventData<int>(1));
         }
     }

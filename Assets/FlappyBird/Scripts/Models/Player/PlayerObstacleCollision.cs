@@ -19,7 +19,7 @@ namespace Games.FlappyBird
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			CollisionSelectionManager2D.Instance.OnEnterTrigger(transform, CollisionObjectName.Obstacle, other);
+			CollisionSelectionManager2D.Instance.OnEnterTrigger(transform, CollisionObjectName.Obstacle, other,() => AudioManager.Instance.PlayAudio(AudioFor.Die,AudioType.SFX),() => AudioManager.Instance.PlayAudio(AudioFor.Hit,AudioType.GamePlay));
 		}
 		#endregion
 
